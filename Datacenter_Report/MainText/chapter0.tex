@@ -1,0 +1,68 @@
+\chapter{Simulation Environment Setup} \label{ch-0}
+
+
+
+\section{macOS Platform}
+Create a folder for this project.
+\underline{mkdir project}\\
+Then go into the project folder. 
+\underline{cd project}\\
+Download the source code of simulation platform.\\
+Platform Repository: \url{https://github.com/booksim/booksim2.git} \\
+If you have installed git command, then clone the repository to the project path.
+\underline{git clone \url{https://github.com/booksim/booksim2.git}}\\
+Compile the source code:\\
+Go to the path \underline{./project/booksim/src}\\
+Execute command: make booksim\\
+The Makefile can be found in the path \underline{./project/booksim/src}\\
+After compiling, there will be a booksim executable file in the path.\\
+Then test some examples:\\
+\underline{./booksim example/torus88}\\
+If you get the results in the terminal, that indicates you build up the simulation environment successfully.\\
+The complete shell commands can be found in listing \ref{codemac}.
+
+
+\begin{lstlisting}[language=sh, caption= Shell Code, label = codemac]
+mkdir project
+cd project
+git clone https://github.com/booksim/booksim2.git
+cd booksim/src
+make booksim
+./booksim example/torus88
+
+\end{lstlisting}
+
+\section{Ubuntu20.04 Platform}
+For Ubuntu System, we need to install the dependencies listed below for the simulation platform first.\\
+\underline{sudo apt install make g++ flex bison}\\
+Create a folder for this project.
+\underline{mkdir project}\\
+Then go into the project folder. 
+\underline{cd project}\\
+Download the source code of simulation platform.\\
+Platform Repository: \url{https://github.com/booksim/booksim2.git}\\
+If you have installed git command, then clone the repository to the project path.
+\underline{git clone \url{https://github.com/booksim/booksim2.git}}\\
+Compile the source code:\\
+Go to the path \underline{./project/booksim/src}\\
+Execute command: make booksim\\
+The Makefile can be found in the path \underline{./project/booksim/src}\\
+After compiling, there will be a booksim executable file in the path.\\
+Then test some examples:\\
+\underline{./booksim example/torus88}\\
+If you get the results in the terminal, that indicates you build up the simulation environment successfully.\\
+The complete shell commands can be found in listing \ref{codeubuntu}.
+
+
+\begin{lstlisting}[language=sh, caption= Shell Code, label = codeubuntu]
+sudo apt update
+sudo apt install make g++ flex bison
+mkdir project
+cd project
+git clone https://github.com/booksim/booksim2.git
+cd booksim/src
+make booksim
+./booksim example/torus88
+
+\end{lstlisting}
+

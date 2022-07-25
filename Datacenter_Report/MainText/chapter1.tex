@@ -1,0 +1,31 @@
+
+\chapter{Simulation Parameters Introduction} \label{ch-1}
+
+\begin{itemize}
+
+    
+    \item \textbf{k} Network radix, the number of routers per dimension
+    
+    \item \textbf{n} Network dimension
+    
+    \item \textbf{mesh} A $k$-ary $n$-mesh (mesh) topology. The \texttt{k} parameter determines the network's radix and the \texttt{n} parameter determines the network's dimension.
+    
+    \item \textbf{torus} A $k$-ary $n$-cube (torus) topology.  The \texttt{k} parameter determines the network's radix and the \texttt{n} parameter determines the network's dimension.
+    
+    \item \textbf{num\_vcs} The number of virtual channels per physical channel.
+    
+    \item \textbf{vc\_buf\_size} The depth of each virtual channel in flits.
+    
+    \item \textbf{wait\_for\_tail\_credit} If non-zero, do not reallocate a virtual channel until the tail flit has left that virtual channel. This conservative approach prevents a dependency from being formed between two packets sharing the same virtual channel in succession.
+    
+    \item \textbf{uniform} Each source sends an equal amount of traffic to each destination (\texttt{traffic = uniform}).
+    
+    \item \textbf{tornado} $d_x = s_x + \lceil k/2 \rceil - 1 \mod k$.
+    
+    \item \textbf{latency\_thres} If the sampled latency of the current simulation exceeds \texttt{latency\_thres}, the simulation is immediately ended.
+    
+    \item \textbf{sim\_type} A simulation can either focus on \texttt{throughput} or \texttt{latency}.  The key difference between these two types is that a \texttt{latency} simulation will wait for all measurement packets to drain before ending the simulation to ensure an accurate latency measurement.  In \texttt{throughput} simulations, this final drain step is eliminated to allow simulation of networks operating beyond their saturation point.
+    
+    \item \textbf{injection\_rate} The rate at which packets are injected into the simulator is set using the \texttt{injection\_rate} option. The simulator's cycle time is a flit cycle, the time it takes a single flit to be injected at a source, and the injection rate is specified in packets per flit cycle. For example, setting \texttt{injection\_rate = 0.25} means that each source injects a new packet in one out of every four simulator cycles. The unit of \texttt{injection\_rate} can optionally be changed to flits per cycle by setting \texttt{injection\_rate\_uses\_flits} to 1.
+\end{itemize}
+
